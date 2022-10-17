@@ -31,6 +31,13 @@ public class HUD : MonoBehaviour
     public void UpdateExperience(float modifier) {
         this.experience += modifier;
 
+        if(experience >= 100) {
+            Player.instance.LevelUp();
+
+            experience -= 100;
+        }
+            
+
         SpawnExperienceText((int) modifier);
 
         UpdateExperienceBar();
@@ -52,5 +59,5 @@ public class HUD : MonoBehaviour
         GameObject experienceText = GameObject.Instantiate(experienceTextPrefab, position, Quaternion.Euler(0f, 0f, rotation), this.transform);
 
         experienceText.GetComponent<TextMeshProUGUI>().text = $"+{experienceModifier}";
-    }
+    } 
 }

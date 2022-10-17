@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
+
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private Animator animator;
@@ -28,6 +30,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        instance = this;
+
         this.rigidBody = this.GetComponent<Rigidbody2D>();
         this.boxCollider = this.GetComponent<BoxCollider2D>();
         this.animator = this.GetComponent<Animator>();
@@ -122,5 +126,11 @@ public class Player : MonoBehaviour
         position.y -= boxCollider.bounds.size.y / 2f;
 
         Instantiate(particles, position, Quaternion.Euler(-90f, 0f, 0f));
+    }
+
+    public void LevelUp() {
+        jumpForce += 2f;
+
+        AudioController.Instance.Play("level_up");
     }
 }
