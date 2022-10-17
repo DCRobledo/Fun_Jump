@@ -651,9 +651,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceBar: {fileID: 92541137}
-  mainCamera: {fileID: 0}
   experienceTextPrefab: {fileID: 6905936840541529516, guid: 1031f934281c7cd4a95dc32fe2e5c42e, type: 3}
-  experience: 0
+  experienceParticlesPrefab: {fileID: 2861726998965515666, guid: 4175f4dc10a850a4088de810b6b16553, type: 3}
 --- !u!1 &1477951582
 GameObject:
   m_ObjectHideFlags: 0

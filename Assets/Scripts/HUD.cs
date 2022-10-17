@@ -12,13 +12,12 @@ public class HUD : MonoBehaviour
     private Image experienceBar;
 
     [SerializeField]
-    private Camera mainCamera;
-
-    [SerializeField]
     private GameObject experienceTextPrefab;
+    [SerializeField]
+    private GameObject experienceParticlesPrefab;
 
     private float experienceBarMaxSize;
-    public float experience; 
+    private float experience; 
 
     void Start()
     {
@@ -45,7 +44,8 @@ public class HUD : MonoBehaviour
     }
 
     private void SpawnExperienceText(int experienceModifier) {
-        Vector3 position = Camera.main.WorldToScreenPoint(new Vector3(Random.Range(-5f, 5f), Random.Range(-2f, 2f), 0f));
+        Vector3 worldPosition = new Vector3(Random.Range(-5f, 5f), Random.Range(-2f, 2f), 0f);
+        Vector3 position = Camera.main.WorldToScreenPoint(worldPosition);
 
         float rotation = Random.Range(-20, 20);
 
