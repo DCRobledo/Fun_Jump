@@ -39,7 +39,7 @@ public class AudioController : MonoBehaviour
     public void Play(string name)
     {
 
-        Debug.Log("Playing: " + name);
+        
         Sound mySound = Array.Find(sounds, sound => sound.GetName() == name);
 
         if (mySound == null)

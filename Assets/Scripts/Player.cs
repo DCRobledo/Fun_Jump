@@ -57,9 +57,11 @@ public class Player : MonoBehaviour
 
         SpawnParticles();
 
-        Camera.instance.ZoomIn();
+        MainCamera.instance.ZoomIn();
 
         AudioController.Instance.Play("jump");
+
+        HUD.instance.UpdateExperience(Random.Range(5, 36));
 
         StartCoroutine(JumpCoolDown());
         StartCoroutine(CheckForLandingDelay());
@@ -72,7 +74,7 @@ public class Player : MonoBehaviour
 
         SpawnParticles();
 
-        Camera.instance.ZoomOut();
+        MainCamera.instance.ZoomOut();
 
         AudioController.Instance.Play("land");
     }
