@@ -59,6 +59,8 @@ public class Player : MonoBehaviour
 
         Camera.instance.ZoomIn();
 
+        AudioController.Instance.Play("jump");
+
         StartCoroutine(JumpCoolDown());
         StartCoroutine(CheckForLandingDelay());
     }
@@ -71,6 +73,8 @@ public class Player : MonoBehaviour
         SpawnParticles();
 
         Camera.instance.ZoomOut();
+
+        AudioController.Instance.Play("land");
     }
 
     private IEnumerator JumpCoolDown() {
