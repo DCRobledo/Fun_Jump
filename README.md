@@ -1,4 +1,4 @@
-# IndieSpainJam 2022
+# Fun Jump
 Summary
 ## QUICK REMINDERS
 - If two people are working in the same feature, and you want to avoid code conflicts, you  can add your name before the branch name (i.e. dani/feature/player_controller)
