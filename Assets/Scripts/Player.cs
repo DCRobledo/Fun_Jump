@@ -40,13 +40,8 @@ public class Player : MonoBehaviour
         if(checkForLanding) {
             isAirBone = !IsGrounded(false);
 
-            if(!isAirBone) {
-                checkForLanding = false;
-
-                animator.SetTrigger("land");
-
-                SpawnParticles();
-            }
+            if(!isAirBone)
+                Land();
         }
             
 
@@ -62,8 +57,20 @@ public class Player : MonoBehaviour
 
         SpawnParticles();
 
+        Camera.instance.ZoomIn();
+
         StartCoroutine(JumpCoolDown());
         StartCoroutine(CheckForLandingDelay());
+    }
+
+    private void Land() {
+        checkForLanding = false;
+
+        animator.SetTrigger("land");
+
+        SpawnParticles();
+
+        Camera.instance.ZoomOut();
     }
 
     private IEnumerator JumpCoolDown() {
