@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
     }
 
     private void SpawnPickUp() {
-        Vector3 pickUpPosition = new Vector3(12f, Random.Range(-1.5f, HUD.instance.GetJumpForceLevel() * 2f), 0f);
+        Vector3 pickUpPosition = new Vector3(12f, Random.Range(-1.5f, HUD.instance.GetJumpForceLevel() * 1.2f), 0f);
         GameObject pickUp = Instantiate(pickUpPrefab, pickUpPosition, Quaternion.identity);
 
         float directionSelector = Random.Range(-1, 2);
