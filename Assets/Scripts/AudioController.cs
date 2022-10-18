@@ -35,6 +35,10 @@ public class AudioController : MonoBehaviour
         }
     }
 
+    private void Start() {
+        FadeIn("music", 1.5f);
+    }
+
 
     public void Play(string name)
     {

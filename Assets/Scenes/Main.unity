@@ -567,8 +567,8 @@ Tilemap:
   - first: {x: 2, y: -6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -807,8 +807,8 @@ Tilemap:
   - first: {x: 4, y: -5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileIndex: 8
+      m_TileSpriteIndex: 23
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -817,8 +817,8 @@ Tilemap:
   - first: {x: 5, y: -5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 9
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -827,8 +827,8 @@ Tilemap:
   - first: {x: 6, y: -5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileIndex: 10
+      m_TileSpriteIndex: 21
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1322,21 +1322,21 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3b7484c03f8cdec4e99e7e1fe5a7daa7, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: d929bc3f470744b4897b9ccafec45775, type: 2}
-  - m_RefCount: 58
+  - m_RefCount: 56
     m_Data: {fileID: 11400000, guid: b2fffb52ce618f641a6276afbf9e84d4, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 66bc3eb2db71169479e8f47b5f3088d6, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 806a4f6f687908c42ab8ca15d6e88a51, type: 2}
-  - m_RefCount: 14
+  - m_RefCount: 13
     m_Data: {fileID: 11400000, guid: 88c45ff89a99f7c4282b9f5ffdd7f0c3, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 0cf4e33399460424cb4065b0a433f25a, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 5f20d1b3c40a1cb46b2c3d75b02608dd, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 9d000e7ea163df64c8a2100d877f017c, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 3406bb2e568be4d408d6a9bc94a1ddcb, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: f0d1a180d8c19d9459c180f0a8e523de, type: 2}
@@ -1371,13 +1371,13 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 58
+  - m_RefCount: 56
     m_Data: {fileID: 21300000, guid: fea5be001be06994e86c1aacf03de651, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: b6ee252a735bfdb429f191744a29396b, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 4de4e0ae2179de940ab99aa92776e5f5, type: 3}
-  - m_RefCount: 14
+  - m_RefCount: 13
     m_Data: {fileID: 21300000, guid: 6086a1788fa365f45b977b382d23e640, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: e3c675de491f3794aa47a38b6e8f83a6, type: 3}
@@ -1407,11 +1407,11 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 0ff4bcdb47d959a4aa8747d5fa68c6ab, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 42adb6fcf35b3284897f906f6a9a46fd, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 7cc2f669f8b4da34287b62f8b00cac46, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: eee5c011ecd63e4408b183585075c2b5, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: d3639db905f45d8449eb81aec4d0d000, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 110
@@ -1476,7 +1476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &92541136
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1591,7 +1591,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.2
+  orthographic size: 6.19
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3925,7 +3925,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1363610303}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 6.2
+    OrthographicSize: 6.19
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -4586,6 +4586,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     targetMixer: 0
+  - name: music
+    clip: {fileID: 8300000, guid: 620bc9ea6d3bb6e4ca445cb8e54a9129, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 1
+    targetMixer: 1
 --- !u!4 &778708298
 Transform:
   m_ObjectHideFlags: 0
@@ -5173,8 +5179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -691.2, y: -408}
-  m_SizeDelta: {x: 458.1883, y: 64.9537}
+  m_AnchoredPosition: {x: -643, y: -413.59}
+  m_SizeDelta: {x: 541.8354, y: 76.8117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1665237322
 Animator:
@@ -5218,8 +5224,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Height: 000m'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 46c5a0821a0651e40a76041e2cc06b13, type: 2}
+  m_sharedMaterial: {fileID: -5554816425854017699, guid: 46c5a0821a0651e40a76041e2cc06b13, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5243,7 +5249,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.1
+  m_fontSize: 68.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5574,8 +5580,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 690.2, y: -408}
-  m_SizeDelta: {x: 458.1883, y: 64.9537}
+  m_AnchoredPosition: {x: 672, y: -413.07}
+  m_SizeDelta: {x: 549.1417, y: 77.8475}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2098490174
 MonoBehaviour:
@@ -5599,8 +5605,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Jump Force: 01'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 46c5a0821a0651e40a76041e2cc06b13, type: 2}
+  m_sharedMaterial: {fileID: -5554816425854017699, guid: 46c5a0821a0651e40a76041e2cc06b13, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5624,7 +5630,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.9
+  m_fontSize: 69.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
