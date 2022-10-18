@@ -15,20 +15,23 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float jumpForce = 12f;
+    [SerializeField] [Range(1, 10)]
+    private float fallMultiplier = 2.5f;
+    [SerializeField] [Range(1, 10)]
+    private float lowJumpMultiplier = 2f;
 
     [SerializeField] [Range(0f, 2f)]
     private float jumpCoolDown = 0.5f;
 
     private bool isJumpOnCoolDown = false;
-    public bool checkForLanding = false;
-    public bool isAirBone = false;
+    private bool checkForLanding = false;
+    private bool isAirBone = false;
 
     [SerializeField]
     private GameObject particles;
 
 
-
-    void Start()
+    private void Start()
     {
         instance = this;
 
@@ -37,7 +40,7 @@ public class Player : MonoBehaviour
         this.animator = this.GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         IsGrounded(true);
 
@@ -51,6 +54,10 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && !isJumpOnCoolDown && IsGrounded(false))
             Jump();
+    }
+
+    private void FixedUpdate() {
+        ApplyGravity(this.fallMultiplier, this.lowJumpMultiplier);
     }
 
 
@@ -69,6 +76,17 @@ public class Player : MonoBehaviour
 
         StartCoroutine(JumpCoolDown());
         StartCoroutine(CheckForLandingDelay());
+    }
+
+    private void ApplyGravity(float fallMultiplier, float lowJumpMultiplier) {
+        // Regular jump gravity
+        if(rigidBody.velocity.y < 0) {
+            rigidBody.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.fixedDeltaTime;
+        }
+
+        // Low jump gravity
+        else if (rigidBody.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Space))
+            rigidBody.velocity += Vector2.up * Physics2D.gravity * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
     }
 
     private void Land() {
@@ -129,7 +147,7 @@ public class Player : MonoBehaviour
     }
 
     public void LevelUp() {
-        jumpForce += 2f;
+        jumpForce += 5f;
 
         HUD.instance.LevelUp();
 
