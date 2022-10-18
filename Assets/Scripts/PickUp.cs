@@ -19,7 +19,7 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player") {
-            HUD.instance.UpdateExperience(Random.Range(20, 50));
+            HUD.instance.UpdateExperience(Random.Range(20, 50), true);
 
             AudioController.Instance.Play("pick_up");
 
@@ -30,4 +30,6 @@ public class PickUp : MonoBehaviour
         else if(other.tag == "Bounds")
             Destroy(this.gameObject);
     }
+
+    public void SwitchDirection() { speed *= -1; }
 }

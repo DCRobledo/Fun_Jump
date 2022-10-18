@@ -33,7 +33,7 @@ public class HUD : MonoBehaviour
         UpdateExperienceBar();
     }
 
-    public void UpdateExperience(float modifier) {
+    public void UpdateExperience(float modifier, bool isPickUp = false) {
         this.experience += modifier;
 
         if(experience >= 100) {
@@ -43,7 +43,7 @@ public class HUD : MonoBehaviour
         }
             
 
-        SpawnExperienceText((int) modifier);
+        SpawnExperienceText((int) modifier, isPickUp);
 
         UpdateExperienceBar();
     }
@@ -61,7 +61,7 @@ public class HUD : MonoBehaviour
         rectTransform.sizeDelta = new Vector2(experienceBarSize, rectTransform.sizeDelta.y);
     }
 
-    private void SpawnExperienceText(int experienceModifier) {
+    private void SpawnExperienceText(int experienceModifier, bool isPickUp = false) {
         Vector3 worldPosition = new Vector3(Random.Range(-5f, 5f), Random.Range(-2f, 2f), 0f);
         Vector3 position = Camera.main.WorldToScreenPoint(worldPosition);
 
@@ -70,6 +70,9 @@ public class HUD : MonoBehaviour
         GameObject experienceText = GameObject.Instantiate(experienceTextPrefab, position, Quaternion.Euler(0f, 0f, rotation), this.transform);
 
         experienceText.GetComponent<TextMeshProUGUI>().text = $"+{experienceModifier}";
+
+        if(isPickUp)
+            experienceText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 105, 128, 255);
     }
 
     private void SpawnLevelUpText() {
@@ -83,4 +86,6 @@ public class HUD : MonoBehaviour
 
         jumpForceText.GetComponent<Animator>().SetTrigger("pop");
     }
+
+    public int GetJumpForceLevel() { return this.jumpForceLevel; }
 }
