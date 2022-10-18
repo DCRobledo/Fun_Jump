@@ -7331,15 +7331,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8613213904946610320, guid: 73001f951a7eac149b8ffbb35f9841bd, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8613213904946610320, guid: 73001f951a7eac149b8ffbb35f9841bd, type: 3}
       propertyPath: particles
       value: 
       objectReference: {fileID: 2861726998965515666, guid: 48268df532498fb43a00afdbb1377d5c, type: 3}
     - target: {fileID: 8613213904946610320, guid: 73001f951a7eac149b8ffbb35f9841bd, type: 3}
+      propertyPath: fallMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613213904946610320, guid: 73001f951a7eac149b8ffbb35f9841bd, type: 3}
       propertyPath: lowJumpMultiplier
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8613213904946610325, guid: 73001f951a7eac149b8ffbb35f9841bd, type: 3}
       propertyPath: m_Name

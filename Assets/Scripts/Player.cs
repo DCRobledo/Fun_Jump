@@ -51,9 +51,11 @@ public class Player : MonoBehaviour
                 Land();
         }
             
-
         if(Input.GetKeyDown(KeyCode.Space) && !isJumpOnCoolDown && IsGrounded(false))
             Jump();
+
+        if(!Input.GetKey(KeyCode.Space) && rigidBody.velocity.y > 0)
+            rigidBody.velocity *= Vector2.down * Physics2D.gravity * (fallMultiplier - 1) * Time.fixedDeltaTime;
     }
 
     private void FixedUpdate() {
@@ -81,12 +83,12 @@ public class Player : MonoBehaviour
     private void ApplyGravity(float fallMultiplier, float lowJumpMultiplier) {
         // Regular jump gravity
         if(rigidBody.velocity.y < 0) {
-            rigidBody.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.fixedDeltaTime;
+            rigidBody.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier) * Time.fixedDeltaTime;
         }
 
         // Low jump gravity
-        else if (rigidBody.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Space))
-            rigidBody.velocity += Vector2.up * Physics2D.gravity * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
+        else if (rigidBody.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+            rigidBody.velocity += Vector2.up * Physics2D.gravity * (lowJumpMultiplier) * Time.fixedDeltaTime;
     }
 
     private void Land() {
@@ -147,7 +149,7 @@ public class Player : MonoBehaviour
     }
 
     public void LevelUp() {
-        jumpForce += 5f;
+        jumpForce += 2f;
 
         HUD.instance.LevelUp();
 
