@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7276669285640870559}
   - component: {fileID: 3465540856116171445}
   - component: {fileID: 1786073443693314993}
+  - component: {fileID: 3645380451449133593}
   m_Layer: 5
   m_Name: experienceText
   m_TagString: Untagged
@@ -156,3 +157,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3645380451449133593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905936840541529516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe20c4adbec21244fb2bdf5214323d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 3
