@@ -12,9 +12,14 @@ public class HUD : MonoBehaviour
     private Image experienceBar;
 
     [SerializeField]
+    private TextMeshProUGUI jumpForceText;
+
+    private int jumpForceLevel = 1;
+
+    [SerializeField]
     private GameObject experienceTextPrefab;
     [SerializeField]
-    private GameObject experienceParticlesPrefab;
+    private GameObject levelUpTextPrefab;
 
     private float experienceBarMaxSize;
     private float experience; 
@@ -43,6 +48,12 @@ public class HUD : MonoBehaviour
         UpdateExperienceBar();
     }
 
+    public void LevelUp() {
+        SpawnLevelUpText();
+
+        UpdateJumpForceText();
+    }
+
     private void UpdateExperienceBar() {
         float experienceBarSize = experienceBarMaxSize * Mathf.InverseLerp(0, 100, experience);
 
@@ -59,5 +70,17 @@ public class HUD : MonoBehaviour
         GameObject experienceText = GameObject.Instantiate(experienceTextPrefab, position, Quaternion.Euler(0f, 0f, rotation), this.transform);
 
         experienceText.GetComponent<TextMeshProUGUI>().text = $"+{experienceModifier}";
+    }
+
+    private void SpawnLevelUpText() {
+        GameObject.Instantiate(levelUpTextPrefab, Camera.main.WorldToScreenPoint(Vector3.zero), Quaternion.identity, this.transform);
     } 
+
+    private void UpdateJumpForceText() {
+        jumpForceLevel++;
+
+        jumpForceText.text = jumpForceLevel < 10 ? $"Jump Force: 0{jumpForceLevel}" : $"Jump Force: {jumpForceLevel}";
+
+        jumpForceText.GetComponent<Animator>().SetTrigger("pop");
+    }
 }

@@ -131,6 +131,8 @@ public class Player : MonoBehaviour
     public void LevelUp() {
         jumpForce += 2f;
 
+        HUD.instance.LevelUp();
+
         AudioController.Instance.Play("level_up");
     }
 }
