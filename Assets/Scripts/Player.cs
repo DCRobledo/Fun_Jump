@@ -53,12 +53,12 @@ public class Player : MonoBehaviour
             
         if(Input.GetKeyDown(KeyCode.Space) && !isJumpOnCoolDown && IsGrounded(false))
             Jump();
-
-        if(!Input.GetKey(KeyCode.Space) && rigidBody.velocity.y > 0)
-            rigidBody.velocity *= Vector2.down * Physics2D.gravity * (fallMultiplier - 1) * Time.fixedDeltaTime;
     }
 
     private void FixedUpdate() {
+        if(!Input.GetKey(KeyCode.Space) && rigidBody.velocity.y > 0)
+            rigidBody.velocity *= Vector2.down * Physics2D.gravity * (fallMultiplier - 1) * Time.fixedDeltaTime;
+
         ApplyGravity(this.fallMultiplier, this.lowJumpMultiplier);
     }
 
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
 
         AudioController.Instance.Play("jump");
 
-        HUD.instance.UpdateExperience(Random.Range(5, 36));
+        HUD.instance.UpdateExperience(Random.Range(1, 10));
 
         StartCoroutine(JumpCoolDown());
         StartCoroutine(CheckForLandingDelay());
