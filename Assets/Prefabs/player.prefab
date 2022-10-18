@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8613213904946610323}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.98039216, b: 0.50980395, a: 1}
   m_FlipX: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!114 &8613213904946610320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,10 +150,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  jumpForce: 5
+  jumpForce: 4
+  fallMultiplier: 2
+  lowJumpMultiplier: 4
   jumpCoolDown: 0.5
-  checkForLanding: 0
-  isAirBone: 0
+  particles: {fileID: 2861726998965515666, guid: 48268df532498fb43a00afdbb1377d5c, type: 3}
 --- !u!95 &8613213904946610323
 Animator:
   serializedVersion: 4

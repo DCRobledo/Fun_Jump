@@ -13,6 +13,8 @@ public class HUD : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI jumpForceText;
+    [SerializeField]
+    private TextMeshProUGUI heightText;
 
     private int jumpForceLevel = 1;
 
@@ -21,6 +23,8 @@ public class HUD : MonoBehaviour
     [SerializeField]
     private GameObject levelUpTextPrefab;
 
+    private Transform player;
+
     private float experienceBarMaxSize;
     private float experience; 
 
@@ -28,9 +32,23 @@ public class HUD : MonoBehaviour
     {
         instance = this;
 
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
         experienceBarMaxSize = experienceBar.GetComponent<RectTransform>().sizeDelta.x;
 
         UpdateExperienceBar();
+    }
+
+    private void Update() {
+        UpdateHeightText();
+    }
+
+    private void UpdateHeightText() {
+        int normalizedHeight = Mathf.RoundToInt((player.position.y + 1.5f) * 5f);
+
+        if(normalizedHeight < 0) normalizedHeight = 0;
+
+        heightText.text = $"Height: {normalizedHeight}m";
     }
 
     public void UpdateExperience(float modifier, bool isPickUp = false) {
@@ -62,21 +80,24 @@ public class HUD : MonoBehaviour
     }
 
     private void SpawnExperienceText(int experienceModifier, bool isPickUp = false) {
-        Vector3 worldPosition = new Vector3(Random.Range(-5f, 5f), Random.Range(-2f, 2f), 0f);
-        Vector3 position = Camera.main.WorldToScreenPoint(worldPosition);
-
         float rotation = Random.Range(-20, 20);
 
-        GameObject experienceText = GameObject.Instantiate(experienceTextPrefab, position, Quaternion.Euler(0f, 0f, rotation), this.transform);
+        GameObject experienceText = GameObject.Instantiate(experienceTextPrefab, Vector3.zero, Quaternion.Euler(0f, 0f, rotation), this.transform);
+
+        experienceText.GetComponent<RectTransform>().anchoredPosition = new Vector2(Random.Range(-400, 400), Random.Range(-280, 280));
 
         experienceText.GetComponent<TextMeshProUGUI>().text = $"+{experienceModifier}";
 
         if(isPickUp)
             experienceText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 105, 128, 255);
+
+        experienceText.transform.SetAsFirstSibling();
     }
 
     private void SpawnLevelUpText() {
-        GameObject.Instantiate(levelUpTextPrefab, Camera.main.WorldToScreenPoint(Vector3.zero), Quaternion.identity, this.transform);
+        GameObject levelUpText = GameObject.Instantiate(levelUpTextPrefab, Vector3.zero, Quaternion.identity, this.transform);
+
+        levelUpText.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
     } 
 
     private void UpdateJumpForceText() {
