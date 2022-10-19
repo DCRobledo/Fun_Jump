@@ -155,4 +155,14 @@ public class Player : MonoBehaviour
 
         AudioController.Instance.Play("level_up");
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Flag") {
+            other.GetComponent<Animator>().SetTrigger("flagReached");
+
+            Destroy(other.GetComponent<BoxCollider2D>());
+
+            AudioController.Instance.Play("flag");
+        }
+    }
 }
